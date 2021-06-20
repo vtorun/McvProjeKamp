@@ -3,19 +3,26 @@
     Layout = null;
 }
 
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
 <h3>Mcv Kamp Tablo Örneği - Kategori</h3>
 <br />
-<table>
+<table class="table table-bordered">
     <tr>
         <th>Kategori ID</th>
         <th>Kategori Adı</th>
         <th>Açıklama</th>
         <th>Kategori Durum</th>
+        <th>Güncelle</th>
     </tr>
     <tr>
         <td>1</td>
         <td>Şehirler</td>
         <td>Bursa</td>
         <td>True</td>
+        <td><button class="btn btn-success">Güncelle</button></td>
     </tr>
 </table>
+<button class="btn btn-info">Yeni Kategori</button>
+<button class="btn btn-warning">Kategori Listele</button>
+<button class="btn btn-danger">Kategori Açıklamaları</button>
