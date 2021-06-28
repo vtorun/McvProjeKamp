@@ -50,5 +50,19 @@ namespace McvProjeKamp.Controllers
             var headings = headingManager.GetById(id);
             return View(headings);
         }
+        [HttpPost]
+        public ActionResult HeadingEdit(Heading heading)
+        {
+            headingManager.HeadingUpdate(heading);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public ActionResult HeadingDelete(int id)
+        {
+            var headingValue = headingManager.GetById(id);
+            headingValue.HeadingStatus = false;
+            headingManager.HeadingDelete(headingValue);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace BusinessLayer.Concrete
 
         public List<Heading> GetAll()
         {
-            return _headingDal.List();
+            return _headingDal.List(x => x.HeadingStatus == true);
         }
 
         public Heading GetById(int id)
@@ -35,7 +35,8 @@ namespace BusinessLayer.Concrete
 
         public void HeadingDelete(Heading heading)
         {
-            _headingDal.Delete(heading);
+            
+            _headingDal.Update(heading);
         }
 
         public void HeadingUpdate(Heading heading)
