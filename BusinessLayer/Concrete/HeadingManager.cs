@@ -25,7 +25,7 @@ namespace BusinessLayer.Concrete
 
         public List<Heading> GetAll()
         {
-            return _headingDal.List(x => x.HeadingStatus == true);
+            return _headingDal.List();
         }
 
         public Heading GetById(int id)

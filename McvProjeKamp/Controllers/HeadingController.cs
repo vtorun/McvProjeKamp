@@ -60,7 +60,7 @@ namespace McvProjeKamp.Controllers
         public ActionResult HeadingDelete(int id)
         {
             var headingValue = headingManager.GetById(id);
-            headingValue.HeadingStatus = false;
+            headingValue.HeadingStatus = !headingValue.HeadingStatus;
             headingManager.HeadingDelete(headingValue);
             return RedirectToAction("Index");
         }
