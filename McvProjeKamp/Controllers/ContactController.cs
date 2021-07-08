@@ -13,6 +13,7 @@ namespace McvProjeKamp.Controllers
     {
         ContactManager contactManager = new ContactManager(new EfContactDal());
         ContactValidator validationRules = new ContactValidator();
+        MessageManager messageManager = new MessageManager(new EfMessageDal());
         public ActionResult Index()
         {
             var contactValues = contactManager.GetList();
@@ -25,6 +26,10 @@ namespace McvProjeKamp.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
+            var contactValues = contactManager.GetList().Count();
+            ViewBag.iletisim = contactValues;
+            ViewBag.Giden = messageManager.GetListSendbox().Count();
+            ViewBag.Gelen = messageManager.GetListInbox().Count();
             return PartialView();
         }
 

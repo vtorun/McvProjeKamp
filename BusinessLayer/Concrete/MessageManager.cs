@@ -18,9 +18,13 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
-        public List<Message> GetAll()
+        public List<Message> GetListInbox()
         {
             return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+        }
+        public List<Message> GetListSendbox()
+        {
+            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
         }
 
         public Category GetById(int id)
@@ -28,14 +32,14 @@ namespace BusinessLayer.Concrete
             throw new NotImplementedException();
         }
 
-        public List<Message> GetListByHeadingId(int id)
+        public List<Message> GetListByMessageId(int id)
         {
             throw new NotImplementedException();
         }
 
         public void MessageAdd(Message message)
         {
-            throw new NotImplementedException();
+            _messageDal.Add(message);
         }
 
         public void MessageDelete(Message message)
@@ -47,5 +51,7 @@ namespace BusinessLayer.Concrete
         {
             throw new NotImplementedException();
         }
+
+
     }
 }
