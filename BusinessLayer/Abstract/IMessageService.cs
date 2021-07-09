@@ -13,7 +13,7 @@ namespace BusinessLayer.Abstract
         List<Message> GetListSendbox();
         List<Message> GetListByMessageId(int id);
         void MessageAdd(Message message);
-        Category GetById(int id);
+        Message GetById(int id);
         void MessageDelete(Message message);
         void MessageUpdate(Message message);
     }

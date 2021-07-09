@@ -17,6 +17,16 @@ namespace McvProjeKamp.Controllers
             var messageList = messageManager.GetListInbox();
             return View(messageList);
         }
+        public ActionResult GetInBoxMessageDetails(int id)
+        {
+            var Values = messageManager.GetById(id);
+            return View(Values);
+        }
+        public ActionResult GetSendBoxMessageDetails(int id)
+        {
+            var Values = messageManager.GetById(id);
+            return View(Values);
+        }
         public ActionResult Sendbox()
         {
             var messageList = messageManager.GetListSendbox();

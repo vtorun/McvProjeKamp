@@ -27,9 +27,9 @@ namespace BusinessLayer.Concrete
             return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
         }
 
-        public Category GetById(int id)
+        public Message GetById(int id)
         {
-            throw new NotImplementedException();
+            return _messageDal.Get(x => x.MessageId == id);
         }
 
         public List<Message> GetListByMessageId(int id)
