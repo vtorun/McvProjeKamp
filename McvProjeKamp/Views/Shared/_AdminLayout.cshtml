@@ -61,16 +61,21 @@ to get the desired effect
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview">
-                            <a href="/AdminCategory/Index" class="nav-link ">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler
+                        @if (User.IsInRole("B"))
+                        {
 
-                                </p>
-                            </a>
 
-                        </li>
+                            <li class="nav-item has-treeview">
+                                <a href="/AdminCategory/Index" class="nav-link ">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kategoriler
+
+                                    </p>
+                                </a>
+
+                            </li>
+                        }
                         <li class="nav-item">
                             <a href="/Heading/Index" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -153,7 +158,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/gallery.html" class="nav-link">
+                            <a href="/Gallery/Index" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Gallery
@@ -161,11 +166,11 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="#" class="nav-link">
+                            <a href="/ErrorPages/Page404/" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Hata Sayfaları
-                                    <i class="fas fa-angle-left right"></i>
+
                                 </p>
                             </a>
                         </li>

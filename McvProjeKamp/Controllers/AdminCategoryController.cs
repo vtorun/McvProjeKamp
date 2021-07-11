@@ -14,6 +14,7 @@ namespace McvProjeKamp.Controllers
     public class AdminCategoryController : Controller
     {
         CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        [Authorize(Roles = "A")]
         public ActionResult Index()
         {
             var categories = categoryManager.GetAll();
