@@ -110,6 +110,10 @@
     <Compile Include="Migrations\202107111225393_mig_addadmin.designer.cs">
       <DependentUpon>202107111225393_mig_addadmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107111715594_mig_add_Messageread.cs" />
+    <Compile Include="Migrations\202107111715594_mig_add_Messageread.designer.cs">
+      <DependentUpon>202107111715594_mig_add_Messageread.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -153,6 +157,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107111225393_mig_addadmin.resx">
       <DependentUpon>202107111225393_mig_addadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107111715594_mig_add_Messageread.resx">
+      <DependentUpon>202107111715594_mig_add_Messageread.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

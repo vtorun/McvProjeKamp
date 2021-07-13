@@ -15,10 +15,11 @@ namespace McvProjeKamp.Controllers
     {
         MessageManager messageManager = new MessageManager(new EfMessageDal());
         MessageValidator messageValidator = new MessageValidator();
-        [Authorize]
+        //[Authorize]
         public ActionResult Inbox()
         {
-            var messageList = messageManager.GetListInbox();
+            string userEmail = (string)Session["AdminUserName"];
+            var messageList = messageManager.GetListInbox(userEmail);
             return View(messageList);
         }
         public ActionResult GetInBoxMessageDetails(int id)
@@ -33,7 +34,8 @@ namespace McvProjeKamp.Controllers
         }
         public ActionResult Sendbox()
         {
-            var messageList = messageManager.GetListSendbox();
+            string userEmail = (string)Session["AdminUserName"];
+            var messageList = messageManager.GetListSendbox(userEmail);
             return View(messageList);
         }
         [HttpGet]

@@ -18,14 +18,20 @@ namespace BusinessLayer.Concrete
             _messageDal = messageDal;
         }
 
-        public List<Message> GetListInbox()
+        public List<Message> GetListInbox(string email)
         {
-            return _messageDal.List(x => x.ReceiverMail == "admin@gmail.com");
+            return _messageDal.List(x => x.ReceiverMail == email);
         }
-        public List<Message> GetListSendbox()
+        public List<Message> GetListSendbox(string email)
         {
-            return _messageDal.List(x => x.SenderMail == "admin@gmail.com");
+            return _messageDal.List(x => x.SenderMail == email);
         }
+
+        public List<Message> MessageNoRead(string email)
+        {
+            return _messageDal.List(x => x.ReceiverMail == email).Where(y => y.MessageRead == false).ToList();
+        }
+
 
         public Message GetById(int id)
         {

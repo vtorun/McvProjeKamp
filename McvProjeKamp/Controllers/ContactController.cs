@@ -26,10 +26,12 @@ namespace McvProjeKamp.Controllers
         }
         public PartialViewResult MessageListMenu()
         {
+            string userEmail = (string)Session["AdminUserName"];
             var contactValues = contactManager.GetList().Count();
             ViewBag.iletisim = contactValues;
-            ViewBag.Giden = messageManager.GetListSendbox().Count();
-            ViewBag.Gelen = messageManager.GetListInbox().Count();
+            ViewBag.Giden = messageManager.GetListSendbox(userEmail).Count();
+            ViewBag.Gelen = messageManager.GetListInbox(userEmail).Count();
+            ViewBag.OkunmayanMesaj = messageManager.MessageNoRead(userEmail).Count();
             return PartialView();
         }
 
