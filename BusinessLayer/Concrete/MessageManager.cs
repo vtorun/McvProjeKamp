@@ -55,7 +55,8 @@ namespace BusinessLayer.Concrete
 
         public void MessageUpdate(Message message)
         {
-            throw new NotImplementedException();
+            message.MessageRead = true;
+            _messageDal.Update(message);
         }
 
 

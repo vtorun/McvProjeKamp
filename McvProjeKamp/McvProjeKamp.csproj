@@ -311,6 +311,8 @@
     <Content Include="AdminLTE-3.0.4\docs\_layouts\home.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\page.html" />
     <Content Include="AdminLTE-3.0.4\docs\_layouts\post.html" />
+    <Content Include="AdminLTE-3.0.4\icon\gelenmail.jpg" />
+    <Content Include="AdminLTE-3.0.4\icon\okunanmail.jpg" />
     <Content Include="AdminLTE-3.0.4\images\adana.jpg" />
     <Content Include="AdminLTE-3.0.4\images\ankara.jpg" />
     <Content Include="AdminLTE-3.0.4\images\antalya.jpg" />

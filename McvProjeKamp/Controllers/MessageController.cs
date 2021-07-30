@@ -18,12 +18,16 @@ namespace McvProjeKamp.Controllers
         //[Authorize]
         public ActionResult Inbox()
         {
-            string userEmail = (string)Session["AdminUserName"];
+            string userEmail = Session["AdminUserName"].ToString();
             var messageList = messageManager.GetListInbox(userEmail);
             return View(messageList);
         }
+
         public ActionResult GetInBoxMessageDetails(int id)
         {
+            var readMessage = messageManager.GetById(id);
+            //readMessage.MessageRead = true;
+            messageManager.MessageUpdate(readMessage);
             var Values = messageManager.GetById(id);
             return View(Values);
         }
@@ -34,7 +38,7 @@ namespace McvProjeKamp.Controllers
         }
         public ActionResult Sendbox()
         {
-            string userEmail = (string)Session["AdminUserName"];
+            string userEmail = Session["AdminUserName"].ToString();
             var messageList = messageManager.GetListSendbox(userEmail);
             return View(messageList);
         }
